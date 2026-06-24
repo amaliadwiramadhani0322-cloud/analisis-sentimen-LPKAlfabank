@@ -1,4 +1,5 @@
 streamlit
 joblib
-scikit-learn==1.7.1
+scikit-learn
+numpy
 Sastrawi
