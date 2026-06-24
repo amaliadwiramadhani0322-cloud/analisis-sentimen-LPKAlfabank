@@ -2,9 +2,13 @@ import streamlit as st
 import joblib
 import re
 import string
+import sklearn
+import sys
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
 
+st.write("Python Version:", sys.version)
+st.write("Scikit-learn Version:", sklearn.__version__)
 # =========================
 # PAGE CONFIG
 # =========================
@@ -176,13 +180,13 @@ if st.button("Prediksi Sentimen"):
     else:
         clean_text = preprocess_text(user_input)
         vector = tfidf.transform([clean_text])
-    
-    try:
-        prediction = model.predict(vector)[0]
+        
+        try:
+            prediction = model.predict(vector)[0]
 
-    except Exception as e:
-        st.error(f"Error prediksi: {e}")
-        st.stop()
+        except Exception as e:
+            st.error(f"Error prediksi: {e}")
+            st.stop()
 
         if prediction == "positif":
             st.markdown("""
