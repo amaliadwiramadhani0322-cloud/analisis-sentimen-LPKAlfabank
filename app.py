@@ -7,8 +7,8 @@ import sys
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
 
-st.write("Python Version:", sys.version)
-st.write("Scikit-learn Version:", sklearn.__version__)
+st.write("Python:", sys.version)
+st.write("Scikit-learn:", sklearn.__version__)
 # =========================
 # PAGE CONFIG
 # =========================
