@@ -114,8 +114,12 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # LOAD MODEL
-model = joblib.load("svm_model.pkl")
-tfidf = joblib.load("tfidf_vectorizer.pkl")
+try:
+    model = joblib.load("svm_model.pkl")
+    tfidf = joblib.load("tfidf_vectorizer.pkl")
+except Exception as e:
+    st.error(f"Gagal load model: {e}")
+    st.stop()
 
 
 # PREPROCESSING
