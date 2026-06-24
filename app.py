@@ -116,9 +116,14 @@ st.markdown("""
 # LOAD MODEL
 @st.cache_resource
 def load_model():
-    model = joblib.load("svm_model.pkl")
-    tfidf = joblib.load("tfidf_vectorizer.pkl")
-    return model, tfidf
+    try:
+        model = joblib.load("svm_model.pkl")
+        tfidf = joblib.load("tfidf_vectorizer.pkl")
+        return model, tfidf
+
+    except Exception as e:
+        st.error(f"Gagal load model: {e}")
+        st.stop()
 
 model, tfidf = load_model()
 
@@ -171,7 +176,13 @@ if st.button("Prediksi Sentimen"):
     else:
         clean_text = preprocess_text(user_input)
         vector = tfidf.transform([clean_text])
+    
+    try:
         prediction = model.predict(vector)[0]
+
+    except Exception as e:
+        st.error(f"Error prediksi: {e}")
+        st.stop()
 
         if prediction == "positif":
             st.markdown("""
