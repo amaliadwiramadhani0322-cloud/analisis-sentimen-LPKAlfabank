@@ -1,2 +1,2 @@
-# sentimen-analisis-Alfabank-Yogyakarta
+# analisis-sentimen-alfabank
 ANALISIS SENTIMEN ULASAN PESERTA PELATIHAN MENGGUNAKAN SUPPORT VECTOR MACHINE (SVM)
