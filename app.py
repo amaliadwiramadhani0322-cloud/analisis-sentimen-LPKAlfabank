@@ -5,7 +5,6 @@ import string
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
 
-st.write("VERSI TERBARU APP")
 # =========================
 # PAGE CONFIG
 # =========================
