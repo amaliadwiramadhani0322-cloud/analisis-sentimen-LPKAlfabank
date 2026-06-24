@@ -1,2 +1,2 @@
-# analisis-sentimen-alfabank
-ANALISIS SENTIMEN ULASAN PESERTA PELATIHAN MENGGUNAKAN SUPPORT VECTOR MACHINE (SVM)
+# analisis-sentimen-LPK Alfabank
+Analisis Sentimen Ulasan Peserta LPK ALFABANK Menggunakan SUPPORT VECTOR MACHINE (SVM)
