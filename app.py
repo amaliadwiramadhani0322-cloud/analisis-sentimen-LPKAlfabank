@@ -114,8 +114,13 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # LOAD MODEL
-model = joblib.load("svm_model.pkl")
-tfidf = joblib.load("tfidf_vectorizer.pkl")
+@st.cache_resource
+def load_model():
+    model = joblib.load("svm_model.pkl")
+    tfidf = joblib.load("tfidf_vectorizer.pkl")
+    return model, tfidf
+
+model, tfidf = load_model()
 
 
 # PREPROCESSING
